@@ -14,7 +14,13 @@
       <form class="fc">
         <div class="input-group">
           <label for="dollars">USD:</label>
-          <input id="dollars" type="number" required>
+          <input 
+            id="dollars"
+            type="number"
+            max="999999999999999" 
+            step="0.01"
+            required
+          >
         </div>
         <div class="input-group">
           <label for="calendar">Date:</label>
@@ -25,7 +31,7 @@
 
       <div class="fc" id="results">
         <span>USD Adjusted: <span id="output"></span></span>
-        <span id="error">test</span>
+        <span id="error"></span>
       </div>
     </main>
   </body>
