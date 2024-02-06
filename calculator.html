@@ -1,0 +1,30 @@
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <h1>Inflation Calculator</h1>
+      <span id="subheader">
+        <em>Given a date and $ amount, adjust for inflation!</em>
+      </span>
+    </header>
+
+    <main>
+      <form>
+        <label for="dollars">USD:</label>
+        <input id="dollars" type="number">
+        <br>
+        <label for="calendar">Date:</label>
+        <input id="calendar" type="date">
+        <br>
+        <button type="submit">Convert</button>
+        <br>
+      </form>
+      
+      <span>USD Adjusted: </span>
+      <span id="output"></span>
+    </main>
+  </body>
+  <script src="script.js"></script>
+</html>
