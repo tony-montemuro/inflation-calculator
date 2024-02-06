@@ -13,17 +13,18 @@
     <main>
       <form>
         <label for="dollars">USD:</label>
-        <input id="dollars" type="number">
+        <input id="dollars" type="number" required>
         <br>
         <label for="calendar">Date:</label>
-        <input id="calendar" type="date">
+        <input id="calendar" min="1913-01-01" type="date" required>
         <br>
         <button type="submit">Convert</button>
         <br>
       </form>
-      
+
       <span>USD Adjusted: </span>
       <span id="output"></span>
+      <span id="error"></span>
     </main>
   </body>
   <script src="script.js"></script>
