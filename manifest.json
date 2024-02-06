@@ -14,5 +14,11 @@
     },
     "host_permissions": [
         "https://api.bls.gov/publicAPI/v1/*"
-    ]
+    ],
+    "permissions": [
+        "storage"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    }
 }
