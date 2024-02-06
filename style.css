@@ -1,12 +1,26 @@
 body {
+    gap: 15px;
     margin: 0;
     padding: 10px;
-    width: 400px;
+    width: 300px;
+}
+
+button {
+    width: fit-content;
 }
 
 h1 {
     text-align: center;
     margin: 0;
+}
+
+form {
+    gap: 10px;
+}
+
+.fc {
+    display: flex;
+    flex-direction: column;
 }
 
 #subheader {
