@@ -35,7 +35,10 @@ async function calculateInflation(usd, month, year) {
 
     if (typeof cpiCurrent !== "undefined" && typeof cpiOld !== "undefined"){
         const adjusted = (cpiCurrent/cpiOld) * usd;
-        output.innerText = `$${adjusted.toFixed(2)}`;
+        output.innerText = `${adjusted.toLocaleString("en-US", {
+            style: "currency",
+            currency: "USD"
+        })}`;
         error.value = "";
         copyBtn.classList.add("show");
     } else {
