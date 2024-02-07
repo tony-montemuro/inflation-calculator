@@ -1,6 +1,5 @@
 const PREV_YEAR = 2023;
 const calendar = document.getElementById("calendar");
-calendar.max = `${PREV_YEAR}-12`;  // last day of previous year
 
 const form = document.querySelector("form");
 form.addEventListener("submit", handleSubmit);
