@@ -11,6 +11,7 @@ body {
 
 button {
     width: fit-content;
+    font-family: 'PT Serif', serif;
 }
 
 button:hover {
@@ -103,6 +104,24 @@ form {
     display: block;
     width: 100%;
     text-align: center;
+}
+
+#submit-btn {
+    background-color: #79a471;
+    opacity: 0.9;
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 5px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+#submit-btn:hover {
+    opacity: 1;
+}
+
+#submit-btn:active {
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3),
+                inset 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 #text {
