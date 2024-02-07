@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Inflation Calculator",
-    "description": "Simple calculator that adjusts USD amounts for inflation.",
+    "description": "Simple calculator that adjusts prices for inflation.",
     "version": "1.0",
     "action": {
         "default_popup": "calculator.html"
