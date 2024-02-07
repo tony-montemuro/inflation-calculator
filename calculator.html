@@ -24,14 +24,15 @@
         </div>
         <div class="input-group">
           <label for="calendar">Date:</label>
-          <input id="calendar" min="1913-01" type="month" required>
+          <input id="calendar" type="text" placeholder="MM/YYYY" required>
         </div>
+        <span id="calendar-error" class="error"></span>
         <button type="submit">Convert</button>
       </form>
 
       <div class="fc" id="results">
         <span>USD Adjusted: <span id="output"></span></span>
-        <span id="error"></span>
+        <span id="error" class="error"></span>
       </div>
     </main>
   </body>

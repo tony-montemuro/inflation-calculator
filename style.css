@@ -23,12 +23,12 @@ form {
     flex-direction: column;
 }
 
+.error {
+    color: red;
+}
+
 #subheader {
     display: block;
     width: 100%;
     text-align: center;
-}
-
-#error {
-    color: red;
 }
