@@ -77,6 +77,5 @@ function handleSubmit(e) {
 function copyOutput() {
     const text = output.textContent;
     navigator.clipboard.writeText(text)
-        .then(() => {})
         .catch ((error) => console.error("There was a problem copying the text: ", error));
 };
