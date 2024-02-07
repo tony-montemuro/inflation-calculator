@@ -58,6 +58,12 @@ form {
     width: 140px;
 }
 
+#result {
+    padding: 10px 5px;
+    border-radius: 5px;
+    background-color: white;
+}
+
 #subheader {
     display: block;
     width: 100%;
