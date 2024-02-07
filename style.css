@@ -13,6 +13,10 @@ button {
     width: fit-content;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 h1 {
     text-align: center;
     margin: 0;
@@ -41,6 +45,10 @@ form {
     opacity: 0.25;
 }
 
+.copy-btn {
+    display: none;
+}
+
 .fc {
     display: flex;
     flex-direction: column;
@@ -48,6 +56,15 @@ form {
 
 .error {
     color: red;
+}
+
+.sb {
+    display: flex;
+    justify-content: space-between;
+}
+
+.show {
+    display: block;
 }
 
 #calendar {
@@ -59,6 +76,7 @@ form {
 }
 
 #result {
+    align-items: center;
     padding: 10px 5px;
     border-radius: 5px;
     background-color: white;

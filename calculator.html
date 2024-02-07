@@ -18,6 +18,8 @@
           <input 
             id="dollars"
             type="number"
+            placeholder="Enter amount..."
+            min="-999999999999999"
             max="999999999999999" 
             step="0.01"
             required
@@ -37,8 +39,11 @@
         <button type="submit">Convert</button>
       </form>
 
-      <div class="fc" id="results">
-        <span id="result">USD Adjusted: <span id="output"></span></span>
+      <div class="fc">
+        <div id="result" class="sb">
+          <span>USD Adjusted: <span id="output"></span></span>
+          <button type="button" class="copy-btn">Copy</button>
+        </div>
         <span id="error" class="error"></span>
       </div>
     </main>

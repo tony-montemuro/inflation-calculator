@@ -1,8 +1,11 @@
 const PREV_YEAR = 2023;
 const calendar = document.getElementById("calendar");
+const output = document.getElementById("output");
 
 const form = document.querySelector("form");
+const copyBtn = document.querySelector(".copy-btn");
 form.addEventListener("submit", handleSubmit);
+copyBtn.addEventListener("click", copyOutput);
 
 async function readLocalStorage(key) {
     return new Promise((resolve, reject) => {
@@ -28,16 +31,17 @@ async function getCpi(month, year) {
 async function calculateInflation(usd, month, year) {
     const cpiCurrent = await getCpi(12, PREV_YEAR);
     const cpiOld = await getCpi(month, year);
-
-    const output = document.getElementById("output");
     const error = document.getElementById("error");
+
     if (typeof cpiCurrent !== "undefined" && typeof cpiOld !== "undefined"){
         const adjusted = (cpiCurrent/cpiOld) * usd;
         output.innerText = `$${adjusted.toFixed(2)}`;
-        error.innerText = "";
+        error.value = "";
+        copyBtn.classList.add("show");
     } else {
-        output.innerText = "";
+        output.value = "";
         error.innerText = "There was a problem during the calculation process. If the problem persists, reinstall the extension.";
+        copyBtn.classList.remove("show");
     }
 };
 
@@ -65,4 +69,11 @@ function handleSubmit(e) {
 
     calendarError.innerText = "";   // clear error if we made it this far
     calculateInflation(usd, month, year);
-}
+};
+
+function copyOutput() {
+    const text = output.textContent;
+    navigator.clipboard.writeText(text)
+        .then(() => {})
+        .catch ((error) => console.error("There was a problem copying the text: ", error));
+};
