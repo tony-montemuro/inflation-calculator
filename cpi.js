@@ -883,8 +883,4 @@ const cpiData = {
     ]
 };
 
-chrome.runtime.onInstalled.addListener(details => {
-    if ([chrome.runtime.OnInstalledReason.INSTALL, chrome.runtime.OnInstalledReason.UPDATE].includes(details.reason)) {
-        chrome.storage.local.set(cpiData);
-    }
-});
+export default cpiData;

@@ -1,3 +1,5 @@
+import cpiData from "./cpi.js";
+
 const PREV_YEAR = 2023;
 const calendar = document.getElementById("calendar");
 const output = document.getElementById("output");
@@ -7,45 +9,18 @@ const copyBtn = document.querySelector(".copy-btn");
 form.addEventListener("submit", handleSubmit);
 copyBtn.addEventListener("click", copyOutput);
 
-async function readLocalStorage(key) {
-    return new Promise((resolve, reject) => {
-        chrome.storage.local.get(key, result => {
-            if (key in result) {
-                resolve(result[key]);
-            } else {
-                reject();
-            }
-        });
-    });
-};
-
-async function getCpi(month, year) {
-    try {
-        const months = await readLocalStorage(year.toString());
-        return parseFloat(months[month] ? months[month] : months.at(-1)); 
-    } catch (error) {
-        return undefined;
-    }
-};
-
 async function calculateInflation(usd, month, year) {
-    const cpiCurrent = await getCpi(12, PREV_YEAR);
-    const cpiOld = await getCpi(month, year);
+    const cpiCurrent = cpiData[PREV_YEAR][11];
+    const cpiOld = cpiData[year][month];
     const error = document.getElementById("error");
 
-    if (typeof cpiCurrent !== "undefined" && typeof cpiOld !== "undefined"){
-        const adjusted = (cpiCurrent/cpiOld) * usd;
-        output.innerText = `${adjusted.toLocaleString("en-US", {
-            style: "currency",
-            currency: "USD"
-        })}`;
-        error.value = "";
-        copyBtn.classList.add("show");
-    } else {
-        output.value = "";
-        error.innerText = "There was a problem during the calculation process. If the problem persists, reinstall the extension.";
-        copyBtn.classList.remove("show");
-    }
+    const adjusted = (cpiCurrent/cpiOld) * usd;
+    output.innerText = `${adjusted.toLocaleString("en-US", {
+        style: "currency",
+        currency: "USD"
+    })}`;
+    error.value = "";
+    copyBtn.classList.add("show");
 };
 
 function handleSubmit(e) {
