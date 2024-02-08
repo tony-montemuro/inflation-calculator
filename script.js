@@ -8,6 +8,7 @@ const form = document.querySelector("form");
 const copyBtn = document.querySelector(".copy-btn");
 form.addEventListener("submit", handleSubmit);
 copyBtn.addEventListener("click", copyOutput);
+document.getElementById("dollars").focus();
 
 async function calculateInflation(usd, month, year) {
     const cpiCurrent = cpiData[PREV_YEAR][11];
