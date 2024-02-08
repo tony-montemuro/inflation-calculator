@@ -12,7 +12,7 @@ document.getElementById("dollars").focus();
 
 async function calculateInflation(usd, month, year) {
     const cpiCurrent = cpiData[PREV_YEAR][11];
-    const cpiOld = cpiData[year][month];
+    const cpiOld = cpiData[year][month-1];
     const error = document.getElementById("error");
 
     const adjusted = (cpiCurrent/cpiOld) * usd;
